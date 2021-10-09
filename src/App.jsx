@@ -1,7 +1,7 @@
 import React from "react";
 import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
-import "./styles.css";
+import "./calendar.css";
 
 function App() {
   const today = new Date();
@@ -15,7 +15,7 @@ function App() {
       <h1>Track your exercise!</h1>
       <br />
       <CalendarHeatmap
-        startDate={shiftDate(today, -365)}
+        startDate={shiftDate(today, -364)}
         showWeekdayLabels={true}
         endDate={today}
         values={[
