@@ -26,7 +26,8 @@
 }
 .container {
   height: 300px;
-  padding: 10px;
+  min-width: 200px;
+  padding: 20px 50px 20px 10px;
   width: 60%;
   border: 3px solid #d0d7de;
   border-radius: 5px;
