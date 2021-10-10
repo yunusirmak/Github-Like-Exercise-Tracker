@@ -34,13 +34,13 @@ function App() {
             return `color-scale-${value.count}`;
           }}
         />
-        <p style={{ display: "inline-block" }}>Less</p>
-        <SingleRect rectColor="#eeeeee" />
-        <SingleRect rectColor="#d6e685" />
-        <SingleRect rectColor="#8cc665" />
-        <SingleRect rectColor="#44a340" />
+        <p className="centerer">More</p>
         <SingleRect rectColor="#1e6823" />
-        <p style={{ display: "inline-block" }}>More</p>
+        <SingleRect rectColor="#44a340" />
+        <SingleRect rectColor="#8cc665" />
+        <SingleRect rectColor="#d6e685" />
+        <SingleRect rectColor="#eeeeee" />
+        <p className="centerer">Less</p>
       </div>
       <h1>Track your exercise!</h1>
       <h1>Track your exercise!</h1>
