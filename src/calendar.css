@@ -4,6 +4,10 @@
  * All of the styles in this file are optional and configurable!
  * The github and gitlab color scales are provided for reference.
  */
+
+* {
+  font-family: "Roboto", sans-serif;
+}
 .centerer {
   display: inline-block;
   height: 100%;
