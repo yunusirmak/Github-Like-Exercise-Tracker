@@ -8,6 +8,12 @@
 * {
   font-family: "Roboto", sans-serif;
 }
+
+.inputPaper {
+  padding: 50px;
+  margin: 0 auto;
+  width: 60%;
+}
 .centerer {
   display: inline-block;
   height: 100%;
@@ -29,7 +35,7 @@
   padding-bottom: 100%;
 }
 .container {
-  height: 300px;
+  height: auto;
   min-width: 200px;
   padding: 20px 50px 20px 10px;
   width: 60%;
