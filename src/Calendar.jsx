@@ -1,18 +1,18 @@
 import React from "react";
-import TextField from "@mui/material/TextField";
 import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
 import "./calendar.css";
 import SingleRect from "./SingleRect";
 //Mui components
-import Button from "@mui/material/Button";
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
-import { autocompleteClasses } from "@mui/material";
+import TextField from "@mui/material/TextField";
+import Fab from "@mui/material/Fab";
+import AddIcon from "@mui/icons-material/Add";
 
 function Calendar() {
   const today = new Date();
@@ -45,37 +45,40 @@ function Calendar() {
         }}
       >
         <Paper elevation={3} className="inputPaper">
-          <FormControl fullWidth sx={{ margin: 2 }}>
-            <InputLabel id="demo-simple-select-label">Age</InputLabel>
+          <TextField
+            sx={{ m: 1, width: 120 }}
+            id="outlined-number"
+            label="Number"
+            type="number"
+          />
+
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <InputLabel id="demo-simple-select-label">Unit</InputLabel>
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
               value={age}
-              label="Age"
+              label="Unit"
               onChange={handleChange}
             >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
+              <MenuItem value={10}>Sets</MenuItem>
+              <MenuItem value={20}>Minutes</MenuItem>
+              <MenuItem value={30}>Kilometeres</MenuItem>
+              <MenuItem value={40}>Miles</MenuItem>
             </Select>
           </FormControl>
-          <FormControl fullWidth sx={{ margin: 2 }}>
-            <InputLabel id="demo-simple-select-label">Age</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={age}
-              label="Age"
-              onChange={handleChange}
-            >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-          </FormControl>
-          <Button variant="outlined" color="success">
-            Submit
-          </Button>
+          <TextField
+            sx={{ m: 1, width: 120 }}
+            id="outlined-basic"
+            label="Exercise"
+            variant="outlined"
+          />
+          <Fab
+            aria-label="add"
+            sx={{ m: 1, backgroundColor: "#44a340", color: "white" }}
+          >
+            <AddIcon />
+          </Fab>
         </Paper>
       </Box>
       <br />
