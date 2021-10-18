@@ -3,7 +3,6 @@ import CalendarHeatmap from "react-calendar-heatmap";
 import "react-calendar-heatmap/dist/styles.css";
 import "./calendar.css";
 import SingleRect from "./SingleRect";
-import Inputs from "./Inputs";
 import ReactTooltip from "react-tooltip";
 
 function Calendar() {
@@ -16,8 +15,6 @@ function Calendar() {
 
   return (
     <div>
-      <h1>Enter Your Exercise Information</h1>
-      <Inputs />
       <br />
       <div className="container">
         <CalendarHeatmap
