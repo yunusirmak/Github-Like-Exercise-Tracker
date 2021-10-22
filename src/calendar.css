@@ -8,6 +8,10 @@
 * {
   font-family: "Roboto", sans-serif;
 }
+.tooltip {
+  width: 210px;
+  text-align: left;
+}
 
 .inputPaper {
   padding: 50px;

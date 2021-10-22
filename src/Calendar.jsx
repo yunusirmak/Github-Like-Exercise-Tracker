@@ -33,12 +33,12 @@ function Calendar(props) {
             return {
               "data-tip":
                 value.date !== null
-                  ? ` Day ${value.date} has ${value.count} contributions. ${value.number} ${value.unit} of ${value.exercise}`
+                  ? `Day ${value.date} has ${value.count} contributions.  ${value.number} ${value.unit} of ${value.exercise}`
                   : "This day has 0 contributions",
             };
           }}
         />
-        <ReactTooltip />
+        <ReactTooltip multiline={true} className="tooltip" />
         <p className="centerer">More</p>
         <SingleRect rectColor="#1e6823" />
         <SingleRect rectColor="#44a340" />
