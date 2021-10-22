@@ -66,49 +66,58 @@ function Inputs() {
         }}
       >
         <Paper elevation={3} className="inputPaper">
-          <TextField
-            sx={{ m: 1, width: 120 }}
-            id="outlined-number"
-            label="Number"
-            type="number"
-            placeholder="1, 2 , 3, 4"
-            onChange={handleChange}
-            value={currentExercise.number}
-            name="number"
-          />
-          <FormControl sx={{ m: 1, minWidth: 120 }}>
-            <InputLabel id="demo-simple-select-label">Unit</InputLabel>
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              label="Unit"
-              value={currentExercise.unit}
+          <div className="insidePaper">
+            <TextField
+              sx={{ m: 1, width: 120, minWidth: 120 }}
+              id="outlined-number"
+              label="Number"
+              type="number"
+              placeholder="1, 2 , 3, 4"
               onChange={handleChange}
-              name="unit"
+              value={currentExercise.number}
+              name="number"
+            />
+            <FormControl sx={{ m: 1, minWidth: 120 }}>
+              <InputLabel id="demo-simple-select-label">Unit</InputLabel>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                label="Unit"
+                value={currentExercise.unit}
+                onChange={handleChange}
+                name="unit"
+              >
+                <MenuItem value="sets">Sets</MenuItem>
+                <MenuItem value="minutes">Minutes</MenuItem>
+                <MenuItem value="kilometers">Kilometeres</MenuItem>
+                <MenuItem value="miles">Miles</MenuItem>
+              </Select>
+            </FormControl>
+            <TextField
+              sx={{ m: 1, width: 120, minWidth: 120 }}
+              xs={8}
+              id="outlined-basic"
+              label="Exercise"
+              variant="outlined"
+              placeholder="Squats"
+              onChange={handleChange}
+              value={currentExercise.exercise}
+              name="exercise"
+            />
+            <Fab
+              aria-label="add"
+              sx={{
+                m: 1,
+                backgroundColor: "#44a340",
+                color: "white",
+                width: 56,
+                minWidth: 56,
+              }}
+              onClick={handleSubmit}
             >
-              <MenuItem value="sets">Sets</MenuItem>
-              <MenuItem value="minutes">Minutes</MenuItem>
-              <MenuItem value="kilometers">Kilometeres</MenuItem>
-              <MenuItem value="miles">Miles</MenuItem>
-            </Select>
-          </FormControl>
-          <TextField
-            sx={{ m: 1, width: 120 }}
-            id="outlined-basic"
-            label="Exercise"
-            variant="outlined"
-            placeholder="Squats"
-            onChange={handleChange}
-            value={currentExercise.exercise}
-            name="exercise"
-          />
-          <Fab
-            aria-label="add"
-            sx={{ m: 1, backgroundColor: "#44a340", color: "white" }}
-            onClick={handleSubmit}
-          >
-            <AddIcon />
-          </Fab>
+              <AddIcon />
+            </Fab>
+          </div>
         </Paper>
       </Box>
       <Calendar dateArray={dates} />

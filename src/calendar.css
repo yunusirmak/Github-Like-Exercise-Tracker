@@ -8,6 +8,9 @@
 * {
   font-family: "Roboto", sans-serif;
 }
+h1 {
+  text-align: center;
+}
 .tooltip {
   width: 210px;
   text-align: left;
@@ -15,8 +18,10 @@
 
 .inputPaper {
   padding: 50px;
-  margin: 0 auto;
   width: 60%;
+}
+.insidePaper {
+  text-align: center;
 }
 .centerer {
   display: inline-block;
