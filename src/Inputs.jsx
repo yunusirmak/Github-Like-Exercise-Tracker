@@ -37,6 +37,7 @@ function Inputs() {
           id="outlined-number"
           label="Number"
           type="number"
+          placeholder="1, 2 , 3, 4"
         />
 
         <FormControl sx={{ m: 1, minWidth: 120 }}>
@@ -59,6 +60,7 @@ function Inputs() {
           id="outlined-basic"
           label="Exercise"
           variant="outlined"
+          placeholder="Squats"
         />
         <Fab
           aria-label="add"
