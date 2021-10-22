@@ -26,8 +26,11 @@ function Calendar(props) {
           classForValue={(value) => {
             if (!value) {
               return "color-empty";
+            } else if (value.count > 4) {
+              return "color-scale-4";
+            } else {
+              return `color-scale-${value.count}`;
             }
-            return `color-scale-${value.count}`;
           }}
           tooltipDataAttrs={(value) => {
             return {

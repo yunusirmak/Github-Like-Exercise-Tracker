@@ -21,7 +21,7 @@ function Inputs() {
     count: 1,
     number: "",
     unit: "",
-    exercise: "",
+    exercise: [],
   });
   const [dates, setDates] = useState([
     { date: "2021-09-01", count: 1 },
