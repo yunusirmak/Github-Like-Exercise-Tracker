@@ -5,13 +5,14 @@ import "./calendar.css";
 import SingleRect from "./SingleRect";
 import ReactTooltip from "react-tooltip";
 
-function Calendar() {
+function Calendar(props) {
   const today = new Date();
   function shiftDate(date, numDays) {
     const newDate = new Date(date);
     newDate.setDate(newDate.getDate() + numDays);
     return newDate;
   }
+  const dates = props.dateArray;
 
   return (
     <div>
@@ -21,13 +22,7 @@ function Calendar() {
           startDate={shiftDate(today, -365)}
           showWeekdayLabels={true}
           endDate={today}
-          values={[
-            { date: "2021-09-01", count: 1 },
-            { date: "2021-10-07", count: 3 },
-            { date: "2021-10-08", count: 4 },
-            { date: "2021-10-09", count: 2 },
-            // ...and so on
-          ]}
+          values={dates}
           classForValue={(value) => {
             if (!value) {
               return "color-empty";
@@ -38,7 +33,7 @@ function Calendar() {
             return {
               "data-tip":
                 value.date !== null
-                  ? ` Day ${value.date} has ${value.count} contributions`
+                  ? ` Day ${value.date} has ${value.count} contributions. ${value.number} ${value.unit} of ${value.exercise}`
                   : "This day has 0 contributions",
             };
           }}

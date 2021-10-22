@@ -7,7 +7,6 @@ function App() {
     <div>
       <h1>Enter Your Exercise Information</h1>
       <Inputs />
-      <Calendar />
     </div>
   );
 }
