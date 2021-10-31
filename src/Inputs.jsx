@@ -4,10 +4,6 @@ import "./styles.css";
 //Mui Components
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
-import InputLabel from "@mui/material/InputLabel";
-import MenuItem from "@mui/material/MenuItem";
-import FormControl from "@mui/material/FormControl";
-import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
@@ -61,7 +57,7 @@ function Inputs() {
             m: 1,
             margin: "auto",
             width: "60%",
-            minWidth: 200,
+            minWidth: 300,
             borderRadius: "16px",
           },
         }}
@@ -70,43 +66,11 @@ function Inputs() {
           <div className="insidePaper">
             <Grid
               container
-              spacing={2}
               direction="row"
               justifyContent="center"
               alignItems="center"
             >
-              <Grid item xs={6} md={3} xl={2}>
-                <TextField
-                  fullWidth
-                  sx={{ m: 1 }}
-                  id="outlined-number"
-                  label="Number"
-                  type="number"
-                  placeholder="1, 2 , 3, 4"
-                  onChange={handleChange}
-                  value={currentExercise.number}
-                  name="number"
-                />
-              </Grid>
-              <Grid item xs={6} md={3} xl={2}>
-                <FormControl fullWidth sx={{ m: 1 }}>
-                  <InputLabel id="demo-simple-select-label">Unit</InputLabel>
-                  <Select
-                    labelId="demo-simple-select-label"
-                    id="demo-simple-select"
-                    label="Unit"
-                    value={currentExercise.unit}
-                    onChange={handleChange}
-                    name="unit"
-                  >
-                    <MenuItem value="sets">Sets</MenuItem>
-                    <MenuItem value="minutes">Minutes</MenuItem>
-                    <MenuItem value="kilometers">Kilometeres</MenuItem>
-                    <MenuItem value="miles">Miles</MenuItem>
-                  </Select>
-                </FormControl>
-              </Grid>
-              <Grid item xs={6} md={3} xl={2}>
+              <Grid item xs={12} md={10} xl={8}>
                 <TextField
                   fullWidth
                   sx={{ m: 1 }}
