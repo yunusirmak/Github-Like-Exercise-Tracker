@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./calendar.css";
 import Calendar from "./Calendar";
 //Mui Components
 import Paper from "@mui/material/Paper";
@@ -11,6 +10,7 @@ import Select from "@mui/material/Select";
 import TextField from "@mui/material/TextField";
 import Fab from "@mui/material/Fab";
 import AddIcon from "@mui/icons-material/Add";
+import Grid from "@mui/material/Grid";
 
 function Inputs() {
   var today = new Date();
@@ -60,63 +60,81 @@ function Inputs() {
             m: 1,
             margin: "auto",
             width: "60%",
-            minWidth: 120,
+            minWidth: 200,
             borderRadius: "16px",
           },
         }}
       >
         <Paper elevation={3} className="inputPaper">
           <div className="insidePaper">
-            <TextField
-              sx={{ m: 1, width: 120, minWidth: 120 }}
-              id="outlined-number"
-              label="Number"
-              type="number"
-              placeholder="1, 2 , 3, 4"
-              onChange={handleChange}
-              value={currentExercise.number}
-              name="number"
-            />
-            <FormControl sx={{ m: 1, minWidth: 120 }}>
-              <InputLabel id="demo-simple-select-label">Unit</InputLabel>
-              <Select
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
-                label="Unit"
-                value={currentExercise.unit}
-                onChange={handleChange}
-                name="unit"
-              >
-                <MenuItem value="sets">Sets</MenuItem>
-                <MenuItem value="minutes">Minutes</MenuItem>
-                <MenuItem value="kilometers">Kilometeres</MenuItem>
-                <MenuItem value="miles">Miles</MenuItem>
-              </Select>
-            </FormControl>
-            <TextField
-              sx={{ m: 1, width: 120, minWidth: 120 }}
-              xs={8}
-              id="outlined-basic"
-              label="Exercise"
-              variant="outlined"
-              placeholder="Squats"
-              onChange={handleChange}
-              value={currentExercise.exercise}
-              name="exercise"
-            />
-            <Fab
-              aria-label="add"
-              sx={{
-                m: 1,
-                backgroundColor: "#44a340",
-                color: "white",
-                width: 56,
-                minWidth: 56,
-              }}
-              onClick={handleSubmit}
+            <Grid
+              container
+              spacing={2}
+              direction="row"
+              justifyContent="center"
+              alignItems="center"
             >
-              <AddIcon />
-            </Fab>
+              <Grid item xs={6} md={3} xl={2}>
+                <TextField
+                  fullWidth
+                  sx={{ m: 1 }}
+                  id="outlined-number"
+                  label="Number"
+                  type="number"
+                  placeholder="1, 2 , 3, 4"
+                  onChange={handleChange}
+                  value={currentExercise.number}
+                  name="number"
+                />
+              </Grid>
+              <Grid item xs={6} md={3} xl={2}>
+                <FormControl fullWidth sx={{ m: 1 }}>
+                  <InputLabel id="demo-simple-select-label">Unit</InputLabel>
+                  <Select
+                    labelId="demo-simple-select-label"
+                    id="demo-simple-select"
+                    label="Unit"
+                    value={currentExercise.unit}
+                    onChange={handleChange}
+                    name="unit"
+                  >
+                    <MenuItem value="sets">Sets</MenuItem>
+                    <MenuItem value="minutes">Minutes</MenuItem>
+                    <MenuItem value="kilometers">Kilometeres</MenuItem>
+                    <MenuItem value="miles">Miles</MenuItem>
+                  </Select>
+                </FormControl>
+              </Grid>
+              <Grid item xs={6} md={3} xl={2}>
+                <TextField
+                  fullWidth
+                  sx={{ m: 1 }}
+                  xs={8}
+                  id="outlined-basic"
+                  label="Exercise"
+                  variant="outlined"
+                  placeholder="Squats"
+                  onChange={handleChange}
+                  value={currentExercise.exercise}
+                  name="exercise"
+                />
+              </Grid>
+              <Grid item xs={6} md={1} xl={1}>
+                <Fab
+                  aria-label="add"
+                  sx={{
+                    m: 1,
+                    backgroundColor: "#44a340",
+                    color: "white",
+                    width: 56,
+                    minWidth: 56,
+                  }}
+                  onClick={handleSubmit}
+                >
+                  <AddIcon />
+                </Fab>
+              </Grid>
+            </Grid>
           </div>
         </Paper>
       </Box>
