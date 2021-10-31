@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Calendar from "./Calendar";
+import DayInfo from "./DayInfo";
 import "./styles.css";
 //Mui Components
 import Paper from "@mui/material/Paper";
@@ -15,7 +16,7 @@ function Inputs() {
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
   const [currentDay, setcurrentDay] = useState({
     date: currentDate,
-    count: 1,
+    count: 0,
     number: "",
     unit: "",
     exercise: [],
@@ -24,7 +25,7 @@ function Inputs() {
     { date: "2021-09-01", count: 1 },
     { date: "2021-10-07", count: 3 },
     { date: "2021-10-08", count: 4 },
-    { date: "2021-10-09", count: 2 },
+    { date: "2021-10-09", count: 2, exercise: [""] },
   ]);
 
   const [currentActivity, setCurrentActivity] = useState("");
@@ -32,8 +33,6 @@ function Inputs() {
   function handleChange(event) {
     const { value } = event.target;
     setCurrentActivity(value);
-    console.log(currentActivity);
-    console.log(currentDay.exercise);
   }
 
   function handleSubmit() {
@@ -44,8 +43,12 @@ function Inputs() {
         exercise: [...prevValue.exercise, currentActivity],
       };
     });
-    setDates([...dates, currentDay]);
   }
+
+  useEffect(() => {
+    setDates([...dates, currentDay]);
+    console.log(dates);
+  }, [currentDay]);
 
   return (
     <div>
@@ -107,6 +110,7 @@ function Inputs() {
         </Paper>
       </Box>
       <Calendar dateArray={dates} />
+      <DayInfo dateArray={dates} />
     </div>
   );
 }

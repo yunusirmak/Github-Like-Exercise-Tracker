@@ -24,7 +24,7 @@ function Calendar(props) {
           endDate={today}
           values={dates}
           classForValue={(value) => {
-            if (!value) {
+            if (!value || value.count == 0) {
               return "color-empty";
             } else if (value.count > 4) {
               return "color-scale-4";
@@ -36,7 +36,7 @@ function Calendar(props) {
             return {
               "data-tip":
                 value.date !== null
-                  ? `Day ${value.date} has ${value.count} contributions.  ${value.number} ${value.unit} of ${value.exercise}`
+                  ? `Day ${value.date} has ${value.count} contributions.`
                   : "This day has 0 contributions",
             };
           }}
@@ -50,7 +50,6 @@ function Calendar(props) {
         <SingleRect rectColor="#eeeeee" />
         <p className="centerer">Less</p>
       </div>
-      <p>Some Info</p>
     </div>
   );
 }
