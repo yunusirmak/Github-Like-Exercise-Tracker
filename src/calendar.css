@@ -17,11 +17,11 @@ h1 {
 }
 
 .inputPaper {
-  padding: 50px;
   width: 60%;
 }
 .insidePaper {
   text-align: center;
+  padding: 50px;
 }
 .centerer {
   display: inline-block;

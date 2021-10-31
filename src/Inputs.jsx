@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Calendar from "./Calendar";
+import "./styles.css";
 //Mui Components
 import Paper from "@mui/material/Paper";
 import Box from "@mui/material/Box";
@@ -119,22 +120,25 @@ function Inputs() {
                   name="exercise"
                 />
               </Grid>
-              <Grid item xs={6} md={1} xl={1}>
-                <Fab
-                  aria-label="add"
-                  sx={{
-                    m: 1,
-                    backgroundColor: "#44a340",
-                    color: "white",
-                    width: 56,
-                    minWidth: 56,
-                  }}
-                  onClick={handleSubmit}
-                >
-                  <AddIcon />
-                </Fab>
-              </Grid>
             </Grid>
+          </div>
+          <div style={{ position: "relative", padding: 10 }}>
+            <Fab
+              aria-label="add"
+              sx={{
+                m: 1,
+                backgroundColor: "#44a340",
+                color: "white",
+                width: 56,
+                minWidth: 56,
+                bottom: 0,
+                right: 0,
+                position: "absolute",
+              }}
+              onClick={handleSubmit}
+            >
+              <AddIcon />
+            </Fab>
           </div>
         </Paper>
       </Box>
