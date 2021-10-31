@@ -13,7 +13,7 @@ function Inputs() {
   var today = new Date();
   var currentDate =
     today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
-  const [currentExercise, setCurrentExercise] = useState({
+  const [currentDay, setcurrentDay] = useState({
     date: currentDate,
     count: 1,
     number: "",
@@ -27,24 +27,24 @@ function Inputs() {
     { date: "2021-10-09", count: 2 },
   ]);
 
+  const [currentActivity, setCurrentActivity] = useState("");
+
   function handleChange(event) {
-    const { name, value } = event.target;
-    setCurrentExercise((prevValue) => {
-      return {
-        ...prevValue,
-        [name]: value,
-      };
-    });
+    const { value } = event.target;
+    setCurrentActivity(value);
+    console.log(currentActivity);
+    console.log(currentDay.exercise);
   }
 
   function handleSubmit() {
-    setCurrentExercise((prevValue) => {
+    setcurrentDay((prevValue) => {
       return {
         ...prevValue,
         count: prevValue.count + 1,
+        exercise: [...prevValue.exercise, currentActivity],
       };
     });
-    setDates([...dates, currentExercise]);
+    setDates([...dates, currentDay]);
   }
 
   return (
@@ -80,7 +80,7 @@ function Inputs() {
                   variant="outlined"
                   placeholder="Squats"
                   onChange={handleChange}
-                  value={currentExercise.exercise}
+                  value={currentActivity}
                   name="exercise"
                 />
               </Grid>
